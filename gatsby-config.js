@@ -2,16 +2,17 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `not Kyle Mathews`,
+      summary: `testing testing`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `netlify config hell`,
+    siteUrl: `https://hardcore-jennings-13cefd.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `100ideas`,
     },
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -75,7 +76,6 @@ module.exports = {
     // `gatsby-plugin-offline`,
 
     // https://www.netlifycms.org/docs/gatsby/#push-to-github
-    `gatsby-plugin-netlify-cms`,
     // {
     //   resolve: 'gatsby-plugin-netlify-cms',
     //   options: {

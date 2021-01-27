@@ -1,12 +1,15 @@
 backend:
   name: git-gateway
-  branch: master
-
+  branch: main
+  # identity_url: "https://example.com/.netlify/identity"
+  # gateway_url:  "https://example.com/.netlify/git"
+  # site_domain:  "https://example.com/"  
+  
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
+  - name: 'hardcore-jennings-13cefd'
     label: 'Blog'
     folder: 'content/blog'
     create: true
