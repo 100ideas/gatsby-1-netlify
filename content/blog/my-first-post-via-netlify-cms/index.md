@@ -27,4 +27,9 @@ npm install --save netlify-cms-app gatsby-plugin-netlify-cms
 
 ---
 
+after publishing: 
+- netlify-cms [commits and pushes to github](content/blog/my-first-post-via-netlify-cms/index.md): very cool!
+- this content: https://github.com/100ideas/gatsby-1-netlify/tree/main/content/blog/my-first-post-via-netlify-cms
+---
+
 ![deep data thoughts](screen-shot-2020-12-29-at-4.59.42-am.png "atometa-screenshot-1")
