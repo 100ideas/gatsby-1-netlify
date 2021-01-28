@@ -7,39 +7,101 @@ backend:
 # when using the default proxy server port
 local_backend: true
 
-site_url: https://your-site.com  
+site_url: https://hardcore-jennings-13cefd.netlify.app
 media_folder: static/img
 public_folder: /img
 # logo_url: https://your-site.com/images/logo.svg
 
 collections:
-  - name: 'hardcore-jennings-13cefd'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}/index'
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"  # don't know what this is for....
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'projects'
-     fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  
+  - name: "entry"  # "org" might be better
+    label: 'Entry'
+    label_singular: 'Entry'
+    folder: "content/entry"
+    create: true
+    media_folder: ''    # if present in collection defn w/ empty strings 
+    public_folder: ''   # specifies media will be saved local
+    slug: "{{subtype}}-{{country}}-{{short_name}}"
+    index: 
+    view_filters:
+      - { label: "Type", field: subtype, pattern: 'Lab'}
+      - { label: "Type", field: subtype, pattern: 'Event'}
+      - { label: "Type", field: subtype, pattern: 'Startup'}
+      - { label: "Type", field: subtype, pattern: 'Project'}
+      - { label: "Type", field: subtype, pattern: 'Funding'}
+      - { label: "Type", field: subtype, pattern: 'Website'}
+      - { label: "Type", field: subtype, pattern: 'Other'}
+    fields:
       - label: Title
         name: title
-        widget: string
-      - label: 'Cover Image'
-        name: 'image'
-        widget: 'image'
-  - name: 'labs'
+        widget: 'string'
+      - label: 'Short name'
+        name: 'short_name'
+        widget: 'string'
+      - label: "Cover Image"
+        name: "image"
+        widget: "image"
+        required: false
+      - label: "Country"
+        name: "country"
+        widget: "select"
+        options: ["na", "sa", "eu", "as", "au", "pl", "wb"]
+      - label: "Type"
+        name: "subtype"
+        widget: "select"
+        options: ["Lab", "Event", "Startup", "Project", "Funding", "Website", "Other"]
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          date_format: 'YYYY-MM-DD',
+          time_format: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - { label: "URL", name: "url", widget: "string", required: false}
+      - { label: "Tags", name: "tags", widget: "list", default: ["workshops", 'events', "teaching"] }
+      - { label: "Currently Active?", name: "active", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown",  hint: 'Overview goes here.'}
+      - { label: "Data (json)", name: "data", widget: "code",  default_language: json, hint: 'structured data'}
+      - { label: "Code (js/mdx)", name: "data", widget: "code",  default_language: js, hint: 'custom code'}
+      #  check out variable types https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types
+      # 'path'?? https://github.com/netlify/netlify-cms/issues/445#issuecomment-581019870
+      # https://github.com/netlify/netlify-cms/issues/4633
 
-  - name: 'events'
+  - name: "docs"
+    label: "Docs"
+    folder: "content/pages/docs"
+    create: true
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    # path: "{{title}}/index"
+    editor:
+      # preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
+  
+  # - name: 'labs'
+  # - name: 'events'
 
 slug:
   encoding: "ascii"

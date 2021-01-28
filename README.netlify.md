@@ -21,6 +21,8 @@ npm install --save netlify-cms-app gatsby-plugin-netlify-cms
 
 
 ## netlify-cms projects & resources
+- forum
+  - https://community.netlify.com/search?q=netlify-cms
 - https://github.com/netlify-templates/gatsby-starter-netlify-cms
 - https://www.netlifycms.org/docs/beta-features/
   - config 'local_backend' in config.yaml when localmode
