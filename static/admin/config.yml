@@ -1,13 +1,16 @@
+# docs https://www.netlifycms.org/docs/configuration-options/
 backend:
   name: git-gateway
   branch: main
   repo: 100ideas/gatsby-1-netlify
-  # identity_url: "https://example.com/.netlify/identity"
-  # gateway_url:  "https://example.com/.netlify/git"
-  # site_domain:  "https://example.com/"  
-  
+
+# when using the default proxy server port
+local_backend: true
+
+site_url: https://your-site.com  
 media_folder: static/img
 public_folder: /img
+# logo_url: https://your-site.com/images/logo.svg
 
 collections:
   - name: 'hardcore-jennings-13cefd'
@@ -25,3 +28,20 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'projects'
+     fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+  - name: 'labs'
+
+  - name: 'events'
+
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
