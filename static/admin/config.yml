@@ -4,7 +4,7 @@ backend:
   branch: main
   repo: 100ideas/gatsby-1-netlify
 
-# when using the default proxy server port
+# run to access local mode npx netlify-cms-proxy-server
 local_backend: true
 
 site_url: https://hardcore-jennings-13cefd.netlify.app
@@ -30,7 +30,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   
   - name: "entry"  # "org" might be better
-    label: 'Entry'
+    label: 'Entries'
     label_singular: 'Entry'
     folder: "content/entry"
     create: true

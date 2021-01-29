@@ -5,6 +5,30 @@ https://www.netlifycms.org/docs/gatsby/
 npm install --save netlify-cms-app gatsby-plugin-netlify-cms
 
 
+# plan
+- start w/ barebones gatsby start
+- also refer to more compex gatsby-netlify-starter-cms
+  - https://github.com/netlify-templates/gatsby-starter-netlify-cms
+
+## mdx
+gatsby howto: Add components to content using MDX
+https://gatsbyjs.com/docs/how-to/routing/mdx/
+
+gatsby theme for MDX content org by collections (Sources the content from basePath and creates multiple collections based on your config)
+https://www.gatsbyjs.com/plugins/gatsby-theme-content-collections/?=mdx
+
+doc site, simplish?
+https://github.com/hasura/gatsby-gitbook-starter
+
+doc site, simplish
+https://github.com/karolis-sh/gatsby-mdx/tree/master/packages/netlify-cms-widget-mdx
+
+https://github.com/renvrant/gatsby-mdx-netlify-cms-starter
+
+experimental support for add mdx components like graph to page
+https://github.com/karolis-sh/gatsby-mdx/tree/master/packages/netlify-cms-widget-mdx
+
+
 ## troubleshooting: remove localstorate `nelifySiteUrl` key
 'localStorage.removeItem("netlifySiteURL");'
 - https://github.com/netlify-templates/gatsby-starter-netlify-cms/issues/58
@@ -21,9 +45,14 @@ npm install --save netlify-cms-app gatsby-plugin-netlify-cms
 
 
 ## netlify-cms projects & resources
-- forum
-  - https://community.netlify.com/search?q=netlify-cms
+forum
+- https://community.netlify.com/search?q=netlify-cms
+
 - https://github.com/netlify-templates/gatsby-starter-netlify-cms
+
+netlify-cms github API core
+https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-backend-github/src
+
 - https://www.netlifycms.org/docs/beta-features/
   - config 'local_backend' in config.yaml when localmode
     - https://www.netlifycms.org/docs/beta-features/
