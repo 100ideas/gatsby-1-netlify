@@ -62,13 +62,30 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    
+    const path = createFilePath({ node, getNode })
+    let srcCategory = getNode(node.parent).sourceInstanceName
+
+    // console.log("\n\n")
+    // console.log(node.frontmatter)
+    // console.log("\nnode.parent: " + srcCategory)
+    
+    const value = 'short_name' in node.frontmatter 
+      ? node.frontmatter.short_name
+      : path
 
     createNodeField({
       name: `slug`,
       node,
       value,
     })
+
+    createNodeField({
+      name: `srcCategory`,
+      node,
+      value: srcCategory,
+    })
+    // console.log("new node fields", node.fields)
   }
 }
 
@@ -110,6 +127,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Fields {
       slug: String
+      srcCategory: String
     }
   `)
 }

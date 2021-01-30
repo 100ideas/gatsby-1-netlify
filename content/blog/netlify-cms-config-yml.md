@@ -1,5 +1,7 @@
 ---
-
+title: 'netlify-cms  "kitchen-sink" config.yml '
+date: 2021-01-28T08:17:41.550Z
+description: " A list of collections the CMS should be able to edit"
 ---
 
 ## netlify-cms/dev-test/config.yml "kitchen sink" demo

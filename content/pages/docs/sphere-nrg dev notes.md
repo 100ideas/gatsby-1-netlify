@@ -28,6 +28,9 @@ prosemirror (its cool if it gets '[x]')
 [ ] pubpub https://github.com/pubpub/pubpub/pull/1239/files
   - https://github.com/pubpub/pubpub
   - https://discuss.prosemirror.net/t/image-plugin-with-uploading-image-title-and-a-few-other-things/3408/3
+[ ] A modified version of Atlassian’s React+TypeScript PM editor
+  - https://discuss.prosemirror.net/t/a-modified-version-of-atlassians-react-typescript-pm-editor/3441/3
+  - atlaskit's editor plugins are awesome UX
 [ ] complex roamish ui https://discuss.prosemirror.net/t/im-building-a-heavily-customized-editor-like-roam-research/3006
   - pass 'password' https://fiber-note-demo.herokuapp.com/notes/welcome
 [ ] balsa https://discuss.prosemirror.net/t/balsa-open-source-documents-tasks-and-knowledgebase-platform/2201  
@@ -40,7 +43,6 @@ CMS
   - perhaps could adapt to work as hypercore proxy? 
 [ ] https://tina.io/docs/ui/inline-editing/inline-blocks/
 
-
 SSR - make it tiny and fast - simpler than gatsby!
 [ ] https://github.com/vitejs/vite
 [ ] https://preactjs.com/guide/v10/hooks/
@@ -52,6 +54,15 @@ UI
 [ ] https://tiny-swiper.joe223.com/
 [ ] ... that UI component pack w/ path-connectors-diagrams...?
 
+misc ideas 
+- hackerspaces federated api 
+  - https://spaceapi.io 
+  - also w/ automated update crawler? https://github.com/SpaceApi/directory-api/blob/master/collector/main.go
+- orgs have some way of adding updates or sub-elements to their sphere page, or better configuring sphere to subscribe to sources and create these automatically
+  - this forms a pulse of dated events 
+- get discourse forum integrated w/ google group and sphere 
+
+---
 
 # gatsby notes
 [x] start w/ barebones gatsby start
@@ -103,12 +114,6 @@ https://www.gatsbyjs.com/docs/tutorial/part-seven/
 
 very interesting relatively simple app w/ mdx and netlify
 https://github.com/hasura/gatsby-gitbook-starter
-
-
-
-
-
-
 
 
 

@@ -7,8 +7,13 @@ import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
+  const frontmatter = post.frontmatter
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const datasrc = JSON.stringify(data, null, 2)
+  const headerImageURL = frontmatter.headerImage && frontmatter.headerImage.name === 'header' 
+    ? frontmatter.headerImage.publicURL
+    : false
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -24,7 +29,10 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
+          {headerImageURL && <img src={headerImageURL} alt="header" />}
+          
         </header>
+
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -60,11 +68,20 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+
+      <hr/>
+      <h3>pageg src via graphql</h3>
+      <code><pre>
+          {datasrc}
+          </pre>
+        </code>
+
     </Layout>
   )
 }
 
 export default BlogPostTemplate
+
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -85,6 +102,10 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        headerImage: image {
+          publicURL
+          name
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
@@ -105,3 +126,28 @@ export const pageQuery = graphql`
     }
   }
 `
+
+
+
+/* 
+kata's id:
+"9702e3ca-ce1a-59c6-b136-ff6a7c0a9ad9" 
+
+need to work out how to get gatsby to add fields for logo and headerimg... just retuning for image field right now
+
+    markdownRemark(id: { eq: "9702e3ca-ce1a-59c6-b136-ff6a7c0a9ad9" }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        image {
+          headerImage: { publicURL }
+          logo: { publicURL } 
+        }
+      }
+    }
+
+*/
