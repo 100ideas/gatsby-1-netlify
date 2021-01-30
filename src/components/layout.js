@@ -13,6 +13,9 @@ const Layout = ({ location, title, children }) => {
           <Link to="/">{title}</Link>
         </h1>
         <span>edit via <a href="/admin/#/"><strong>/admin/#/</strong></a></span>
+        <span style={{marginLeft: "4em"}}><a href="https://app.netlify.com/sites/hardcore-jennings-13cefd">netlify dashboard</a></span>
+        <span style={{marginLeft: "4em"}}>edits committed to <a href="https://github.com/100ideas/gatsby-1-netlify">github</a></span>
+
       </section>
     )
   } else {
